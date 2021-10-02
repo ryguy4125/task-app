@@ -35,12 +35,14 @@ const AddTask = ({ onAdd }) => {
                 <input type='date' placeholder='Enter Date'
                     value={day} 
                     onChange={(e) => setDay(e.target.value)}
+                    required='required'
                 />
             </div>
             <div className='form-control'>
                 <input type='time' placeholder='Enter Time'
                     value={ taskTime }
                     onChange={(e) => setTaskTime(e.target.value)}
+                    required='required'
                 />
             </div>
             <div className='form-control form-control-check' >
