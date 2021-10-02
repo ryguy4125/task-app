@@ -1,9 +1,9 @@
 import { useState } from "react"
 
-
 const AddTask = ({ onAdd }) => {
     const [text, setText] = useState('')
-    const [day, setDay] = useState('')
+    const [day, setDay] = useState(new Date())
+    const [taskTime, setTaskTime] = useState('08:00')
     const [reminder, setReminder] = useState(false)
 
     const onSubmit = (e) => {
@@ -14,26 +14,33 @@ const AddTask = ({ onAdd }) => {
             return
         }
 
-        onAdd({ text, day, reminder })
+        onAdd({ text, day, taskTime, reminder })
         setText('')
         setDay('')
+        setTaskTime('')
         setReminder('false')
     }
 
     return (
         <form className='add-form' onSubmit={onSubmit}>
             <div className='form-control' >
-                <label>Task</label>
+                <label>Job</label>
                 <input type='text' placeholder='Enter Task' 
                     value={text} 
                     onChange={(e) => setText(e.target.value)}
                 />
             </div>
             <div className='form-control' >
-                <label>Day & Time</label>
-                <input type='text' placeholder='Enter Date & Time' 
+                <label>Day</label>
+                <input type='date' placeholder='Enter Date'
                     value={day} 
                     onChange={(e) => setDay(e.target.value)}
+                />
+            </div>
+            <div className='form-control'>
+                <input type='time' placeholder='Enter Time'
+                    value={ taskTime }
+                    onChange={(e) => setTaskTime(e.target.value)}
                 />
             </div>
             <div className='form-control form-control-check' >

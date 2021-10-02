@@ -14,15 +14,17 @@ function App() {
   const [tasks, setTasks] = useState([
     {
     "id": 1,
-    "text": "Eat",
-    "day": "7:00 PM",
+    "text": "Meet at Site 0387",
+    "day": "Monday Oct, 3",
+    "taskTime": "07:00",
     "reminder": false,
     },
     {
       "id": 2,
-      "text": "Eat",
-      "day": "7:00 PM",
-      "reminder": false,
+      "text": "Follow-up with site manager",
+      "day": "Monday Oct, 3",
+      "taskTime": "10:00",
+      "reminder": true,
       },
   ])
 
